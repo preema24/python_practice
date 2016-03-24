@@ -7,7 +7,8 @@ import sys
 
 connection = MySQLdb.connect(host='localhost', port=3306, user='codaxtr_user', passwd='c0d@xtr', db='codaxtr')
 cursor = connection.cursor()
-cursor.execute("select p.id, p.fullname, u.id,u.unresolved_party_type_name from party p inner join unresolved_party_type u on u.id=p.id order by p.id ")
+cursor.execute("select p.id, p.fullname, u.id,u.unresolved_party_type_name from party p inner\
+join unresolved_party_type u on u.id=p.id order by p.id ")
 
 
 records_tuple = cursor.fetchall()
