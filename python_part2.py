@@ -15,12 +15,11 @@ while True:
 	data = cursor.fetchall ()
 	if not data:
 		break
-		for record in data:
-			wf = open('preemas_csv.csv', 'w')
-			csv_writer = csv.writer(wf, delimiter =',', quotechar='"')
-			csv_writer.writerow(record)
-			wf.close()
-offset=offset+1000
-cursor.close ()
+	for record in data:
+		wf = open('preemas_csv.csv', 'w')
+		csv_writer = csv.writer(wf, delimiter =',', quotechar='"')
+		csv_writer.writerow(record)
+		wf.close()
+	offset=offset+1000
 connection.close()
 sys.exit()
